@@ -1,6 +1,6 @@
 var React = require('react');
-var SearchUser = require('./SearchUser');
-var UserProfile = require('./UserProfile');
+var SearchUser = require('./SearchUser.jsx');
+var User = require('./User.jsx');
 
 var GitHub = React.createClass({
 	getInitialState: function() {
@@ -21,7 +21,7 @@ var GitHub = React.createClass({
 				<h1>Sample ReactJS App using Github API</h1>
 				<SearchUser updateUser={this.updateUser} updateRepos={this.updateRepos} />
 				<hr />
-				<UserProfile user={this.state.user} repos={this.state.repos} />
+				<User user={this.state.user} repos={this.state.repos} />
 			</div>
 		);
 	}

@@ -1,5 +1,5 @@
 var React = require('react');
-var GitHubUserService = require('./../services/GitHubUserService');
+var GitHubUserService = require('./../services/GitHubUserService.jsx');
 
 var SearchUser = React.createClass({
 	handleSubmit: function(e) {

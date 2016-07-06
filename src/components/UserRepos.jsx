@@ -36,4 +36,8 @@ var UserRepos = React.createClass({
 	}
 });
 
+UserRepos.propTypes = {
+  repos: React.PropTypes.array
+};
+
 module.exports = UserRepos;

@@ -16,7 +16,7 @@ Sample application using React + Webpack - GitHub API
 $ npm install
 ```
 
-Runnig webpack
+Running webpack
 ```
 $ webpack -w --progress
 ```

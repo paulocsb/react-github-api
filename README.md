@@ -10,6 +10,7 @@ Sample application using React + Webpack - GitHub API
 - Babel
 - Babel-loader
 - Babel-core
+- Babel-preset-es2015 (es6)
 
 ### Installing dependencies
 ```

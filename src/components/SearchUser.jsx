@@ -1,19 +1,27 @@
-var React = require('react');
-var GitHubUserService = require('./../services/GitHubUserService.jsx');
+import React from 'react';
+import GitHubUserService from './../services/GitHubUserService.jsx';
 
-var SearchUser = React.createClass({
-	handleSubmit: function(e) {
+class SearchUser extends React.Component {
+	
+	constructor(props) {
+		super(props);
+
+		this.handleSubmit = this.handleSubmit.bind(this);
+	}
+
+	handleSubmit(e) {
 		e.preventDefault();
 
-		GitHubUserService.getProfileByUsername(this.refs.username.value).then(function(response) {
+		GitHubUserService.getProfileByUsername(this.refs.username.value).then((response) => {
 			this.props.updateUser(response.data);
-		}.bind(this));
+		});
 
-		GitHubUserService.getReposByUsername(this.refs.username.value).then(function(response) {
+		GitHubUserService.getReposByUsername(this.refs.username.value).then((response) => {
 			this.props.updateRepos(response.data);
-		}.bind(this));
-	},
-	render: function() {
+		});
+	}
+
+	render() {
 		return (
 			<div className="panel panel-default">
 				<div className="panel-heading">
@@ -32,12 +40,12 @@ var SearchUser = React.createClass({
 			</div>
 		);
 	}
-});
 
+};
 
 SearchUser.propTypes = {
   updateUser: React.PropTypes.func.isRequired,
   updateRepos: React.PropTypes.func.isRequired,
 };
 
-module.exports = SearchUser;
+export default SearchUser;

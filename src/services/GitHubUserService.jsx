@@ -1,12 +1,15 @@
-var Axios = require('axios');
+import Axios from 'axios';
 
-var GitHubUserService = {
+const GitHubUserService = {
+
 	getProfileByUsername: function(username) {
-		return Axios.get('https://api.github.com/users/' + username);
+		return Axios.get(`https://api.github.com/users/${username}`);
 	},
+
 	getReposByUsername: function(username) {
-		return Axios.get('https://api.github.com/users/' + username + '/repos');
+		return Axios.get(`https://api.github.com/users/${username}/repos`);
 	}
+
 };
 
-module.exports = GitHubUserService;
+export default GitHubUserService;
